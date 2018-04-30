@@ -1,0 +1,10 @@
+# Also define 'vault_users' (`group_vars/staging/vault.yml`, `group_vars/production/vault.yml`)
+users:
+  - name: "{{ web_user }}"
+    groups:
+      - "{{ web_group }}"
+
+web_user: web
+web_group: www-data
+web_sudoers:
+  - "/usr/sbin/service php7.2-fpm *"

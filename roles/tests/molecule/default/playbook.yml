@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    env: development
+    apps:
+      test.nl:
+        site_hosts:
+          - canonical: test.nl
+        ssl:
+          enabled: true
+          provider: self-signed
+        multisite: {}
+
+  pre_tasks:
+    - debug: var=users
+
+  roles:
+    - role: users
+    - role: nginx
+    - role: app-setup

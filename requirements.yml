@@ -1,0 +1,11 @@
+- src: https://github.com/lansible/ansible-container-role-cleanup
+  version: master
+  name: cleanup
+
+- name: composer
+  src: geerlingguy.composer
+  version: 1.7.0
+
+- name: mailhog
+  src: geerlingguy.mailhog
+  version: 2.1.3
